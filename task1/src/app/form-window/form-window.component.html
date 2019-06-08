@@ -1,0 +1,83 @@
+
+<div class="card mx-auto" style="width: 30rem;">
+
+  <div class="card-body">
+
+      <form (ngSubmit)="onSubmit()"  >
+          <table>
+              <tr>
+                    <td>Title</td>
+                    <td><select name="title" [(ngModel)] = "formData.title">
+                        <option value="title 1">title 1</option>
+                        <option value="title 2">title 2</option>
+                        <option value="title 3">title 3</option>
+                        <option value="title 4">title 4</option>
+                      </select></td>
+              </tr>
+            
+              <tr>
+                    <td>Full Name*</td>
+                    <td><input type="text" name="fullName" [(ngModel)] = "formData.fullName" required></td>
+              </tr>
+              <tr>
+                    <td>Phone Number*</td>
+                    <td><input type="number" name="phoneNumber" [(ngModel)] = "formData.phoneNumber" required></td>
+              </tr>
+              <tr>
+                    <td>Mobile Number</td>
+                    <td><input type="number" name="mobileNumber" [(ngModel)] = "formData.mobileNumber"></td>
+              </tr>
+              <tr>
+                    <td>Email*</td>
+                    <td><input type="email" name="email" [(ngModel)] = "formData.email" required></td>
+              </tr>
+              <tr>
+                    <td>Street Address</td>
+                    <td><input type="text" name="streetAddress" [(ngModel)] = "formData.streetAddress"></td>
+              </tr>
+              <tr>
+                    <td>Town</td>
+                    <td><input type="text" name="town" [(ngModel)] = "formData.town"></td>
+              </tr>
+              <tr>
+                    <td>City</td>
+                    <td><input type="text" name="city" [(ngModel)] = "formData.city"></td>
+              </tr>
+              <tr>
+                    <td>Number of People*</td>
+                    <td><input type="number" name="numberOfPeople" [(ngModel)] = "formData.numberOfPeople" required></td>
+              </tr>
+              <tr>
+                    <td>Number of Rooms*</td>
+                    <td><input type="number" name="numberOfRooms" [(ngModel)] = "formData.numberOfRooms" ></td>
+              </tr>
+              <tr>
+                    <td>Arrival Date/Time*</td>
+                    <td><input type="date" name="arrivalDate" [(ngModel)] = "formData.arrivalDate" required></td>
+              </tr>
+              <tr>
+                    <td>Number of Nights*</td>
+                    <td><input type="number" name="numberOfNight" [(ngModel)] = "formData.numberOfNight" required></td>
+              </tr>
+              <tr>
+                    <td>Occupancy</td>
+                    <td><input type="radio" name="occupancy" [(ngModel)] = "formData.occupancy" value="single"> Single<br>
+                      <input type="radio" name="occupancy" [(ngModel)] = "formData.occupancy" value="twin"> Twin<br>
+                      <input type="radio" name="occupancy" [(ngModel)] = "formData.occupancy" value="double"> Double</td>
+              </tr>
+              <tr>
+                    <td>Additional Info</td>
+                    <td><textarea rows="4" [(ngModel)] = "formData.additionalInfo"  name="additionalInfo"></textarea></td>
+              </tr>
+
+
+        </table>
+        <div [hidden] ="!postError" class="alert alert-danger">
+            {{postMsg}}
+          </div>
+              <button class="btn btn-primary" type="submit">Submit Form</button>
+       </form>
+  
+  </div>  
+
+</div>
